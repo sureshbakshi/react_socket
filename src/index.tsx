@@ -11,12 +11,12 @@ const history = createBrowserHistory();
 import {STORE} from "./store/index";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
-import HeaderComponent from "./components/home/header_component";
+// import HeaderComponent from "./components/home/header_component";
 import { AppRoutes } from "./utils/routes";
 
 import ScrollToTop from "./components/common/scrollToTop";
-import { isMobile } from "./utils/index";
-import DownloadApp from "./components/common/DownloadApp";
+// import { isMobile } from "./utils/index";
+// import DownloadApp from "./components/common/DownloadApp";
 
 ReactDOM.render(
   <Provider store={STORE}>
@@ -24,14 +24,14 @@ ReactDOM.render(
       <ConnectedRouter history={history}>
         <Router>
            {<ScrollToTop />}
-           <HeaderComponent {...this.props} />
+           {/* <HeaderComponent {...this.props} /> */}
           <div className="page-wrapper">
             <Switch>
               {AppRoutes.map((route: any) => {
                 return <Route key={route.path} {...route} />;
               })}
             </Switch>
-            {isMobile() && <DownloadApp />}
+            {/* {isMobile() && <DownloadApp />} */}
           </div>
         </Router>
       </ConnectedRouter>

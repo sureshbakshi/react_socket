@@ -1,7 +1,7 @@
 import { utility } from "../utils/dispatch_utility";
 import { connect } from "react-redux";
-import FooterComponent from "../components/home/footer";
-import { ToastContainer } from 'react-toastify';
+// import FooterComponent from "../components/home/footer";
+// import { ToastContainer } from 'react-toastify';
 // import Features from '../components/home/features';
 import { Component } from "react";
 import * as React from 'react';
@@ -41,8 +41,8 @@ class App extends Component<IAppProps, any> {
             <div className="app">
                 <p>{response}</p>
                 <p onClick={() => { this.handleClick() }} className="btn btn-primary">Trigger event</p>
-                <ToastContainer />
-                <FooterComponent />
+                {/* <ToastContainer /> */}
+                {/* <FooterComponent /> */}
             </div>
         );
     }
