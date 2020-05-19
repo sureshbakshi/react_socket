@@ -1,0 +1,188 @@
+.banner-section {
+  padding-top: 85px;
+  display: flex;
+  align-items: center;
+  @include screen("mobile") {
+    padding-top: 80px;
+    flex-direction: column;
+  }
+}
+.bgOverlay {
+  background-color: #e0e0e0;
+  background-blend-mode: multiply;
+}
+
+.banner-bg {
+  height: 100vh;
+  background-size: cover;
+  background-position: top center;
+  color: #fff;
+  text-align: center;
+  margin-top: -80px;
+  @include screen("mobile") {
+    height: calc(100vh - 50px);
+  }
+}
+
+.img-carousel {
+  // position: relative;
+  @include screen("mobile") {
+    width: 100%;
+  }
+}
+
+.banner-text {
+  padding: 20px 0;
+  font-size: 40px;
+  line-height: 60px;
+  font-weight: bold;
+  transform: translateX(-100%);
+  transition: all 0.8s ease-in-out;
+  position: absolute;
+  width: 70%;
+  opacity: 0;
+  text-align: left;
+  font-family: $font-family-lmRegular;
+
+  &.active {
+    transform: translateX(-0%);
+    opacity: 1;
+  }
+  @include screen("mobile") {
+    font-size: 25px;
+    line-height: 30px;
+  }
+}
+.text-section {
+  min-height: 200px;
+  @include screen("mobile") {
+    min-height: 100px;
+  }
+}
+.text-block {
+  padding: 20px 100px;
+  width: 100%;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .text_div {
+    position: absolute;
+    width: 100%;
+    top: 14%;
+  }
+  @include screen("mobile") {
+    width: 100%;
+    justify-content: flex-start;
+    height: calc(100vh - 130px);
+    padding: 15px 30px;
+  }
+}
+.control-section {
+  position: absolute;
+  bottom: 15px;
+  left: 20%;
+  @include screen("mobile") {
+    bottom: 30px;
+    left: 30px;
+  }
+}
+.banner-dot {
+  width: 20px;
+  height: 20px;
+  border: 2px solid $white;
+  background-color: transparent;
+  margin: 5px 40px 0px 0px;
+  display: inline-block;
+  cursor: pointer;
+  &.active {
+    background-color: $white;
+  }
+  @include screen("mobile") {
+    width: 15px;
+    height: 15px;
+    margin: 5px 20px 0px 0px;
+  }
+}
+.banner-btn {
+  font-size: 25px;
+  color: #fff;
+  border-radius: 0;
+  border: 1px solid $white;
+  margin-right: 25px;
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+  }
+  @include screen("mobile") {
+    margin-right: 15px;
+    font-size: 14px;
+  }
+}
+.slider-image {
+  width: 45%;
+  position: absolute;
+  right: -10%;
+  bottom: -200px;
+  transition: all 0.8s ease-in-out;
+  transform: translateX(100%);
+  opacity: 0;
+  &.active {
+    transform: translateX(-0%);
+    opacity: 1;
+  }
+  @include screen("mobile") {
+    right: -15%;
+    width: 100%;
+    bottom: -15%;
+  }
+}
+@media screen and (min-height: 700px) and (orientation: portrait) and (max-device-aspect-ratio: 13/9) {
+  .text-section {
+    margin-top: 40px;
+  }
+  .text-block {
+    .text_div {
+      position: absolute;
+      width: 100%;
+      top: 0%;
+    }
+  }
+  .slider-image {
+    width: 100%;
+  }
+  .text-block {
+    // height: calc(100vh - 180px) !important;
+  }
+  .banner-bg {
+    // height: calc(100vh - 100px) !important;
+  }
+  .control-section {
+    bottom: 30px !important;
+  }
+}
+@media screen and (device-aspect-ratio: 40/71) {
+  .text-section {
+    margin-top: 0px;
+  }
+  .slider-image {
+    width: 90%;
+  }
+  .banner-text {
+    font-size: 20px;
+  }
+}
+
+.logo-block {
+  text-align: left;
+
+  .logo-img {
+    max-width: 250px;
+
+    @include screen("mobile") {
+      max-width: 165px;
+    }
+  }
+}

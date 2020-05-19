@@ -1,0 +1,285 @@
+
+.logo-block {
+  text-align: left;
+  .logo-img {
+    max-width: 250px;
+    @include screen('mobile'){
+      max-width: 165px;
+    }
+  }
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.header-section{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  @include res-styles($header-section-padding);
+  .header-left{
+    @include screen('mobile'){
+      width: 75%;
+    }
+  }
+  .header-right{
+    @include screen('mobile'){
+      width: 25%;
+      text-align: right;
+    }
+    .list-items{
+      margin: 0;
+      padding: 0;
+      width: calc(100% - 52px);
+      .list-item{
+        border-left: 2px solid $white;
+        padding: 0 24px;
+        &:first-child{
+          border-left: none;
+        }
+        .menu-link{
+          color: $white;
+          font-family: $font-family-regular;
+          text-decoration: none;
+          @include res-styles($p-font-size);
+        }
+      }
+    }
+  }
+}
+
+
+// bm styles
+.bm-overlay{
+  background: rgba(0,0,0,.65);
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  left: 0 !important;
+  top: 0 !important;
+}
+.header_sidebar{
+  right: -15px !important;
+  top: 0;
+  z-index: 5;
+  box-shadow: -10px 5px 13px rgba(0,0,0,.4);
+  -webkit-box-shadow: -10px 5px 13px rgba(0,0,0,.4);
+  -ms-box-shadow: -10px 5px 13px rgba(0,0,0,.4);
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  @include screen('mobile'){
+    width: 230px !important;
+  }
+ 
+  .bm-menu{
+    padding: 60px 0 0;
+    background: rgba(4,68,191,1);
+    .bm-item-list{
+      padding: 0;
+      .list-item{
+        margin: 0;//0 0 16px;
+        @include screen('mobile'){
+          // text-align: center;
+        }
+        &:last-child{
+          margin: 0;
+          padding-bottom: 90px;
+        }
+        .list-item-link{
+          color: $white;
+          padding: 10px 30px 10px 24px;
+          background: transparent;
+          text-decoration: none;
+          display: block;
+          // @include res-styles($p-font-size);
+          font-size: 20px;
+          line-height: 32px;
+          text-align: left;
+          @include screen('mobile'){
+            padding: 8px 24px;
+            @include res-styles($p-font-size);
+            font-size: 16px;
+            line-height: 24px;
+          }
+          &:hover{
+            color: $brand-color-primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+.download-block{
+  padding: 110px 0 0;
+  margin: 0;
+  @include screen('mobile'){
+    display: none !important;
+  }
+  .download-button{
+    position: fixed;
+    width: 100%;
+    max-width: 320px;
+    bottom: 0;
+    // right: 0;
+    // left: inherit;
+    background: transparent linear-gradient(180deg, #F3661A 0%, #8B3202 100%) 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    opacity: 1;
+    font-size: 18px;
+    line-height: 32px;
+    @include screen('mobile'){
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 25px;//36px;
+  
+  @include screen('mobile'){
+    right: 15px;
+  }
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: $white;
+  width: 70%;
+  margin: 0 auto;
+  height: 3px !important;
+}
+.bm-burger-button{
+  span{
+    span{
+      &:first-child{
+        top: 25% !important;
+      }
+      &:nth-child(2){
+        top: 44% !important;
+      }
+      &:last-child{
+        top: 63% !important;
+      }
+    }
+  }
+  .icon-menu{
+      &.blue{
+        &:before{
+          color: #3468c3 !important;
+          font-size: 20px;
+        }
+      
+      }
+      &.whte{
+        &:before{
+          color: #fff !important;
+        font-size: 20px;
+        }
+        
+      }
+   
+  }
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: $white;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: transparent;
+  width: inherit !important;
+  height: inherit !important;
+}
+
+// menuIcon
+.bm-burger-button{
+  // width: 52px;
+  // height: 52px;
+  position: absolute;
+  left: inherit;
+  right: 15px;
+  top: 50% !important;
+  cursor: pointer;
+  transform: translateY(-50%);
+  @include screen('mobile'){
+    // width: 38px;
+    // height: 38px;
+  }
+}
+// menuIcon
+.bm-cross-button{
+  // width: initial !important;
+  // height: initial !important;
+  right: 36px !important;
+  position: absolute;
+  left: inherit;
+  cursor: pointer;
+  margin-top: 20px;
+  @include screen('mobile'){
+    // width: initial !important;
+    // height: initial !important;
+    // right: 15px !important;
+    top: 15px !important;
+    margin-top: 0;
+  }
+  > span{
+    top: 4px !important;
+    right: 26px !important;
+    @include screen('mobile'){
+      right: 18px !important;
+    }
+  }
+}

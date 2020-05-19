@@ -1,0 +1,28 @@
+//libraries
+@import './generic/bootstarp.scss';
+@import './generic/variables.scss';
+@import './generic/responsive-styles.scss';
+@import './generic/react-slick.scss';
+@import './generic/animate';
+@import './generic/toastify';
+@import './generic/btn-animated.scss';
+//global styles
+@import './generic/icons.scss';
+@import './generic/mixins.scss';
+//pages
+@import './common/downloadApp';
+@import './common/notFound';
+
+@import './home/how_to_pay';
+@import './home/header_styles.scss';
+@import './home/banner_styles.scss';
+@import './home/features.scss';
+@import './home/about_us.scss';
+
+
+@import './app.scss';
+@import './privacyPolicy';
+@import './global/footer';
+
+
+

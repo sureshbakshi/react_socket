@@ -1,0 +1,20 @@
+.download-app {
+    background: transparent linear-gradient(91deg, #00C7FF 0%, #025065 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+    text-align: center;
+    position: fixed;
+    z-index: 999999;
+    width: 100%;
+    bottom: 0;
+    .download-btn{
+        padding: 15px;
+        text-align: center;
+        display: inline-block;
+        color: $white;
+        font-size: 18px;
+        i {
+            padding-right: 10px;
+        }
+    }
+    
+}
